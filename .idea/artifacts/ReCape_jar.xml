@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ReCape:jar">
+    <output-path>$PROJECT_DIR$/../Paper 1.21.11/plugins</output-path>
+    <root id="archive" name="ReCape.jar">
+      <element id="module-output" name="ReCape" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,20 @@
+cape:
+  set:
+    usage: "<color:#7FB7D9>Использование:</color> <color:#9FD3F0>/cape set <Плащ></color>"
+    successfully: "<color:#7FB7D9>Плащ установлен игроку</color> <color:#6FCF97>%player%</color>"
+  remove:
+    successfully: "<color:#7FB7D9>Плащ удалён игроку</color> <color:#6FCF97>%player%</color>"
+    failed: "<color:#E6A57E>У этого игрока нет плаща</color>"
+  usage: "<color:#7FB7D9>/cape set <Плащ> - Установить плащ</color>\n<color:#7FB7D9>/cape remove</color> - убрать плащ"
+
+recape:
+  repack:
+    successfully: "<color:#7FB7D9>Ресурспак успешно упакован</color>"
+  reload:
+    successfully: "<color:#7FB7D9>Конфигурации успешно перезагружены</color>"
+  usage: "<color:#7FB7D9>/recape reload</color> <color:#9FBFD9>- Перезагрузить конфиги</color>\n<color:#7FB7D9>/recape repack</color> <color:#9FBFD9>- Перепаковать ресурспак</color>"
+
+player-not-found: "<color:#E6A57E>Игрок не найден</color>"
+only-for-players: "<color:#E6A57E>Эта команда доступна только игрокам</color>"
+no-permission: "<color:#E6A57E>Недостаточно прав для выполнения команды</color>"
+cape-not-found: "<color:#E6A57E>Такого плаща не существует</color>"

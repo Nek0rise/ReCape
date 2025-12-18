@@ -1,0 +1,9 @@
+name: ReCape
+version: '1.0'
+main: uwu.nekorise.reCape.ReCape
+api-version: '1.21'
+authors: [ Nekorise ]
+depend: [packetevents]
+commands:
+  cape: {}
+  recape: {}

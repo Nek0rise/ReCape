@@ -1,0 +1,7 @@
+pack.mcmeta
+pack.png
+assets/minecraft/textures/entity/player/capes/.keep
+assets/minecraft/textures/entity/player/trans.png
+assets/minecraft/shaders/core/entity.fsh
+assets/minecraft/shaders/core/entity.vsh
+assets/minecraft/shaders/include/recape/vertex/imports.glsl

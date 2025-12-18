@@ -1,0 +1,20 @@
+cape:
+  set:
+    usage: "<color:#7FB7D9>Usage:</color> <color:#9FD3F0>/cape set <Cape></color>"
+    successfully: "<color:#7FB7D9>Cape has been set for player</color> <color:#6FCF97>%player%</color>"
+  remove:
+    successfully: "<color:#7FB7D9>Cape has been removed from player</color> <color:#6FCF97>%player%</color>"
+    failed: "<color:#E6A57E>This player does not have a cape</color>"
+  usage: "<color:#7FB7D9>/cape set <Cape> - Set cape</color>\n<color:#7FB7D9>/cape remove</color> - Remove cape"
+
+recape:
+  repack:
+    successfully: "<color:#7FB7D9>Resource pack has been successfully packed</color>"
+  reload:
+    successfully: "<color:#7FB7D9>Configurations have been successfully reloaded</color>"
+  usage: "<color:#7FB7D9>/recape reload</color> <color:#9FBFD9>- Reload configurations</color>\n<color:#7FB7D9>/recape repack</color> <color:#9FBFD9>- Repack resource pack</color>"
+
+player-not-found: "<color:#E6A57E>Player not found</color>"
+only-for-players: "<color:#E6A57E>This command can only be executed by a player</color>"
+no-permission: "<color:#E6A57E>You do not have permission to do this</color>"
+cape-not-found: "<color:#E6A57E>That cape does not exist</color>"
