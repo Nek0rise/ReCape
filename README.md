@@ -5,7 +5,7 @@ Add any capes to your server - **yes, even in HD format!**
 
 > **Note:** This plugin uses a resource pack!
 
-[](https://github.com/Nek0rise/ReCape/blob/main/recapeBanner.png)
+![](https://github.com/Nek0rise/ReCape/blob/main/recapeBanner.png?raw=true)
 
 ---
 
