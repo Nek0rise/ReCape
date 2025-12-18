@@ -27,7 +27,7 @@ public class ReCapeCommand implements CommandExecutor {
                 repack(sender);
             }
             case "reload" -> {
-                if (!sender.hasPermission("recape.repack")) {
+                if (!sender.hasPermission("recape.reload")) {
                     sender.sendMessage(MMessage.applyColor(LanguageDataStorage.getNoPermission()));
                     return false;
                 }
