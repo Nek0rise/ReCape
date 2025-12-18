@@ -1,7 +1,6 @@
 package uwu.nekorise.reCape.mannequin;
 
 import io.papermc.paper.datacomponent.item.ResolvableProfile;
-import io.papermc.paper.datacomponent.item.ResolvableProfile.SkinPatch;
 import lombok.Getter;
 import net.kyori.adventure.key.Key;
 import org.bukkit.Bukkit;

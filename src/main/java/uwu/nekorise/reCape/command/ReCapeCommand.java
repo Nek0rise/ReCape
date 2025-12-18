@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import uwu.nekorise.reCape.config.ConfigManager;
 import uwu.nekorise.reCape.config.LanguageDataStorage;
-import uwu.nekorise.reCape.recourcepack.RecourcepackBuilder;
+import uwu.nekorise.reCape.recourcepack.ResourcepackBuilder;
 import uwu.nekorise.reCape.util.color.MMessage;
 
 public class ReCapeCommand implements CommandExecutor {
@@ -42,7 +42,7 @@ public class ReCapeCommand implements CommandExecutor {
     }
 
     private void repack(CommandSender sender) {
-        RecourcepackBuilder rpBuilder = new RecourcepackBuilder();
+        ResourcepackBuilder rpBuilder = new ResourcepackBuilder();
         rpBuilder.buildAsync(sender);
     }
 

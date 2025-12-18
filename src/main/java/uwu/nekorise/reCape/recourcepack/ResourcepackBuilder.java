@@ -1,6 +1,5 @@
 package uwu.nekorise.reCape.recourcepack;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -22,7 +21,7 @@ import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class RecourcepackBuilder {
+public class ResourcepackBuilder {
 
     private final ReCape plugin = ReCape.getInstance();
 
@@ -39,8 +38,9 @@ public class RecourcepackBuilder {
                     capesDir.mkdirs();
 
                     if (!capesExisted) {
-                        copyDefaultCape("fox.png", capesDir);
-                        copyDefaultCape("heart.png", capesDir);
+                        copyDefaultResource("fox.png", capesDir);
+                        copyDefaultResource("heart.png", capesDir);
+                        copyDefaultResource("readme.txt", capesDir);
                     }
 
                     List<String> capeNames = collectCapeNames(capesDir);
@@ -69,10 +69,16 @@ public class RecourcepackBuilder {
 
                     deleteRecursive(tempDir.toFile());
 
-                    Log.info(ReCape.getInstance(), MMessage.getText(MMessage.applyColor(LanguageDataStorage.getReCapeRepackSucc())));
+                    Log.info(plugin,
+                            MMessage.getText(
+                                    MMessage.applyColor(LanguageDataStorage.getReCapeRepackSucc())
+                            )
+                    );
 
                     if (sender != null && !(sender instanceof ConsoleCommandSender)) {
-                        sender.sendMessage(MMessage.applyColor(LanguageDataStorage.getReCapeRepackSucc()));
+                        sender.sendMessage(
+                                MMessage.applyColor(LanguageDataStorage.getReCapeRepackSucc())
+                        );
                     }
 
                 } catch (Exception e) {
@@ -82,7 +88,14 @@ public class RecourcepackBuilder {
         }.runTaskAsynchronously(plugin);
     }
 
-    private void copyDefaultCape(String name, File capesDir) throws IOException {
+    private String normalizeCapeName(String fileName) {
+        return fileName
+                .toLowerCase(Locale.ROOT)
+                .replace(".png", "")
+                .replaceAll("[ _\\-!]", "");
+    }
+
+    private void copyDefaultResource(String name, File capesDir) throws IOException {
         InputStream in = plugin.getResource("capes/" + name);
         if (in == null) {
             throw new IllegalStateException("Missing default cape in resources: " + name);
@@ -102,18 +115,15 @@ public class RecourcepackBuilder {
         if (files == null) return result;
 
         for (File file : files) {
-            String fileName = file.getName().toLowerCase(Locale.ROOT);
-            String capeName = fileName.substring(0, fileName.length() - 4); // .png
-            result.add(capeName);
+            String normalizedName = normalizeCapeName(file.getName());
+            result.add(normalizedName);
         }
 
         return result;
     }
 
     private void processCape(File original, Path outputDir) throws IOException {
-        String baseName = original.getName()
-                .toLowerCase(Locale.ROOT)
-                .replace(".png", "");
+        String baseName = normalizeCapeName(original.getName());
 
         BufferedImage image = ImageIO.read(original);
 
@@ -145,7 +155,7 @@ public class RecourcepackBuilder {
     private void copyResourceFolder(String resourcePath, Path target) throws IOException {
         try (InputStream list = plugin.getResource(resourcePath + "/.list")) {
             if (list == null) {
-                throw new IllegalStateException("Missing .list file in resourcepack!");
+                throw new IllegalStateException("Missing .list file in resourcepack");
             }
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(list));
